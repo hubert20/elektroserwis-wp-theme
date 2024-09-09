@@ -7,11 +7,9 @@ elektro-serwis
 Menu:
 Strona główna
 O firmie
-Oferta
+Oferta - Naprawa alternatorów/ sprzedaż alternatorów / coś jeszcze?
 Kontakt
-Blog
-
-Kategorie na blogu?
+Blog - Kategorie na blogu?
 
 
 
