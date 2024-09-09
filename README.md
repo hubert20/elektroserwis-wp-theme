@@ -1,4 +1,4 @@
-# elektro-serwis-wp-theme
+# elektroserwis-wp-theme
 elektro-serwis
 
 
