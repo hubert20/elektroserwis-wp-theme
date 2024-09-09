@@ -1,0 +1,38 @@
+// Main hero
+.main-hero {
+    &__slogan {
+        @include media-breakpoint-up(xl) {
+            position: absolute;
+            top: 250px;
+            left: 0;
+            width: 100%;
+        }
+
+        z-index: 9;
+
+
+        &--txt {
+            position: relative;
+            font-style: italic;
+            letter-spacing: 1px;
+            z-index: 0;
+
+            &::after {
+                position: absolute;
+                left: 0;
+                top: 0;
+                content: "";
+                height: 100%;
+                width: 100%;
+                background: rgba(7, 77, 126, .6);
+                z-index: -1;
+
+                @include media-breakpoint-up(xl) {
+                    transform: skewX(-23deg);
+                }
+
+                border: 1px solid rgba(7, 77, 126, .4);
+            }
+        }
+    }
+}

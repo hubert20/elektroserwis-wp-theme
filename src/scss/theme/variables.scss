@@ -1,0 +1,124 @@
+// ------------------------------------ //
+// #Colors
+// ------------------------------------ //
+
+$blue-light: #2bbbea;
+$blue-dark: #1776bf;
+$blue-medium: #1f96d3;
+
+$names: (
+    blue-light,
+    blue-dark,
+    blue-medium
+);
+$colors: (
+    $blue-light,
+    $blue-dark,
+    $blue-medium
+);
+
+@each $name in $names {
+    $i: index($names, $name);
+
+    .bg-#{$name} {
+        background-color: nth($colors, $i);
+    }
+
+    .text-#{$name} {
+        color: nth($colors, $i);
+    }
+
+    .btn-#{$name} {
+        @extend .btn;
+        background: nth($colors, $i);
+        color: #fff !important;
+
+        &:hover,
+        &:focus {
+            color: nth($colors, $i) !important;
+            background: #fff;
+        }
+    }
+}
+
+//Custom Btns
+.btn-blue-swipe,
+.btn-white-swipe,
+.btn-whithout-swipe {
+    background-color: $blue-dark;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+    border: none;
+    z-index: 0;
+    padding: 12px;
+    border: 1px solid #fff;
+
+    @include media-breakpoint-up(xl) {
+        transform: skewX(-23deg);
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #fff;
+        transform: translateX(-100%);
+        transition: 0.5s ease-in-out;
+        z-index: -1;
+    }
+
+    .btn-text {
+        display: inline-block;
+
+        @include media-breakpoint-up(xl) {
+            transform: skewX(23deg);
+        }
+
+        position: relative;
+        z-index: 1;
+    }
+
+    &:hover {
+        color: $blue-dark;
+        background-color: $blue-dark;
+
+        &:before {
+            transform: translateX(0);
+        }
+    }
+}
+
+.btn-white-swipe {
+    background-color: $white !important;
+    color: $blue-dark !important;
+    border: 1px solid $blue-dark;
+
+    &:before {
+        background-color: $blue-dark !important;
+    }
+
+    &:hover {
+        color: #fff !important;
+        background-color: #fff !important;
+    }
+}
+
+.btn-whithout-swipe {
+    background-color: transparent !important;
+    color: #fff !important;
+    border: 1px solid #fff;
+
+    &:before {
+        background-color: #fff !important;
+    }
+
+    &:hover {
+        color: $green !important;
+        background-color: transparent !important;
+        border: 1px solid #fff;
+    }
+}

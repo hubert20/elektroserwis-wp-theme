@@ -1,0 +1,196 @@
+// ------------------------------------ //
+// #Typography rules
+// ------------------------------------ //
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;600;700&display=swap');
+
+//Montserrat
+$montserrat-font-family: "Montserrat", sans-serif;
+
+// Teko
+$teko-font-family: 'Teko', sans-serif;
+
+.montserrat-font {
+  font-family: $montserrat-font-family !important;
+}
+
+.teko-font {
+  font-family: $teko-font-family !important;
+}
+
+html,
+body {
+  background: white;
+  font-family: $montserrat-font-family;
+}
+
+.lh-11 {
+  line-height: 1.1;
+}
+
+.lh-12 {
+  line-height: 1.2;
+}
+
+.lh-13 {
+  line-height: 1.3;
+}
+
+.lh-14 {
+  line-height: 1.4;
+}
+
+.lh-15 {
+  line-height: 1.5;
+}
+
+.lh-16 {
+  line-height: 1.6;
+}
+
+.ls-1 {
+  letter-spacing: 2px;
+}
+
+.ls-2 {
+  letter-spacing: 2px;
+}
+
+//Heading h1-h6 with Playfair font
+//Title big 105px-50px
+//h1 80px-50px
+@media (min-width: 360px) {
+  .standard-title-1 {
+    font-size: calc(3.125rem + ((1vw - 3.6px) * 1.9231));
+    min-height: 0vw;
+  }
+}
+
+@media (min-width: 1920px) {
+  .standard-title-1 {
+    font-size: 80px;
+  }
+}
+
+// h2 70px - 42px
+@media (min-width: 360px) {
+  .standard-title-2 {
+    font-size: calc(2.625rem + ((1vw - 3.6px) * 1.7949));
+    min-height: 0vw;
+  }
+}
+
+@media (min-width: 1920px) {
+  .standard-title-2 {
+    font-size: 70px;
+  }
+}
+
+//h3 60px-34px
+@media (min-width: 360px) {
+  .standard-title-3 {
+    font-size: calc(2.125rem + ((1vw - 3.6px) * 1.6667));
+    min-height: 0vw;
+  }
+}
+
+@media (min-width: 1920px) {
+  .standard-title-3 {
+    font-size: 60px;
+  }
+}
+
+//h4 50px-28px
+@media (min-width: 360px) {
+  .standard-title-4 {
+    font-size: calc(1.75rem + ((1vw - 3.6px) * 1.4103));
+    min-height: 0vw;
+  }
+}
+
+@media (min-width: 1920px) {
+  .standard-title-4 {
+    font-size: 50px;
+  }
+}
+
+//h5 40px-26px
+@media (min-width: 360px) {
+  .standard-title-5 {
+    font-size: calc(1.625rem + ((1vw - 3.6px) * 0.8974));
+    min-height: 0vw;
+  }
+}
+
+@media (min-width: 1920px) {
+  .standard-title-5 {
+    font-size: 40px;
+  }
+}
+
+//h6 30px - 22px
+@media (min-width: 360px) {
+  .standard-title-6 {
+    font-size: calc(1.4375rem + ((1vw - 3.6px) * 0.4487));
+    min-height: 0vw;
+  }
+}
+
+@media (min-width: 1920px) {
+  .standard-title-6 {
+    font-size: 30px;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+// Fonts icons
+@font-face {
+  font-family: 'icomoon';
+  src: url('./assets/fonts/icomoon.eot?lxqpyh');
+  src: url('./assets/fonts/icomoon.eot?lxqpyh#iefix') format('embedded-opentype'),
+    url('./assets/fonts/icomoon.ttf?lxqpyh') format('truetype'),
+    url('./assets/fonts/icomoon.woff?lxqpyh') format('woff'),
+    url('./assets/fonts/icomoon.svg?lxqpyh#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-safe_home:before {
+  content: "\e900";
+}
+
+.icon-guaranty_home:before {
+  content: "\e901";
+}
+
+.icon-client_indiwidual:before {
+  content: "\e902";
+}
