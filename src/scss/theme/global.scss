@@ -43,7 +43,7 @@
             .navbar-brand {
                 &.top-logo {
                     img {
-                        width: 80px;
+                        width: 165px;
                     }
                 }
             }
@@ -70,26 +70,13 @@
 }
 
 .navbar-brand {
-    @include media-breakpoint-up(xl) {
-        position: absolute;
-        top: -52px;
-        display: flex;
-        width: 185px;
-        height: 131px;
-        align-items: center;
-        justify-content: center;
-        background-image: url('http://localhost:81/wordpress/wp-content/uploads/2024/06/logo-box.png');
-        background-size: 100%;
-        filter: drop-shadow(0px 3px 25px rgba(18, 87, 151, .25));
-    }
-
     &.top-logo {
         img {
             width: 50px;
             transition: 0.3s ease-in-out;
 
             @include media-breakpoint-up(xl) {
-                width: 80px;
+                width: 165px;
             }
         }
         .slogan {
@@ -116,9 +103,8 @@
                 text-transform: uppercase;
 
                 @include media-breakpoint-up(xl) {
-                    font-size: 1.50rem;
-                    font-weight: 400;
-                    // letter-spacing: 0.1em;
+                    font-size: 16px;
+                    font-weight: 600;
                     position: relative;
                     padding: 1.6rem 0.7rem 1.2rem 0.7rem;
 
@@ -130,7 +116,7 @@
                         position: absolute;
                         left: 0;
                         top: 50%;
-                        background-color: $blue-medium;
+                        background-color: $orange;
                         transition: 0.3s ease-in-out;
                         z-index: -1;
                         transform: translateY(-45%) skew(-23deg, 0deg);
@@ -152,7 +138,7 @@
                 }
 
                 &.active {
-                    color: $blue-dark;
+                    color: $orange;
 
                     &:before {
                         width: 100%;
@@ -289,12 +275,12 @@
         }
 
         &:hover {
-            background-color: $blue-medium;
+            background-color: $orange;
             color: #fff;
         }
 
         &.active {
-            background-color: $blue-medium;
+            background-color: $orange;
             color: #fff;
         }
     }

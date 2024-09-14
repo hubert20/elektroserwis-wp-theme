@@ -2,19 +2,13 @@
 // #Colors
 // ------------------------------------ //
 
-$blue-light: #2bbbea;
-$blue-dark: #1776bf;
-$blue-medium: #1f96d3;
+$orange: #f47729;
 
 $names: (
-    blue-light,
-    blue-dark,
-    blue-medium
+    orange
 );
 $colors: (
-    $blue-light,
-    $blue-dark,
-    $blue-medium
+    $orange
 );
 
 @each $name in $names {
@@ -42,10 +36,10 @@ $colors: (
 }
 
 //Custom Btns
-.btn-blue-swipe,
+.btn-orange-swipe,
 .btn-white-swipe,
 .btn-whithout-swipe {
-    background-color: $blue-dark;
+    background-color: $orange;
     color: #fff;
     overflow: hidden;
     position: relative;
@@ -83,8 +77,8 @@ $colors: (
     }
 
     &:hover {
-        color: $blue-dark;
-        background-color: $blue-dark;
+        color: $orange;
+        background-color: $orange;
 
         &:before {
             transform: translateX(0);
@@ -94,11 +88,11 @@ $colors: (
 
 .btn-white-swipe {
     background-color: $white !important;
-    color: $blue-dark !important;
-    border: 1px solid $blue-dark;
+    color: $orange !important;
+    border: 1px solid $orange;
 
     &:before {
-        background-color: $blue-dark !important;
+        background-color: $orange !important;
     }
 
     &:hover {
@@ -117,7 +111,7 @@ $colors: (
     }
 
     &:hover {
-        color: $green !important;
+        color: $orange !important;
         background-color: transparent !important;
         border: 1px solid #fff;
     }
