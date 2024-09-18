@@ -1,4 +1,30 @@
 // Main hero
-.main-hero {
+.top-hero {
+    min-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
+    &__overlay {
+        background-color: #121212;
+        opacity: 0.86;
+        // mix-blend-mode: darken;
+        transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+        min-height: 100vh;
+    }
+}
+
+// Swiper hero slider + Navigation
+.main-swiper {
+    .swiper-button-prev,
+    .swiper-button-next {
+        color: #fff;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        &::after {
+            font-size: 22px;
+        }
+    }
 }
