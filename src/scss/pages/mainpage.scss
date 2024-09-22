@@ -4,18 +4,23 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: 0;
 
-    &__overlay {
+    &:before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
         background-color: #121212;
         opacity: 0.86;
-        // mix-blend-mode: darken;
+        mix-blend-mode: darken;
         transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
-        min-height: 100vh;
+        content: '';
     }
 }
 
 // Swiper hero slider + Navigation
 .main-swiper {
+
     .swiper-button-prev,
     .swiper-button-next {
         color: #fff;
@@ -23,8 +28,13 @@
         height: 50px;
         border-radius: 50%;
         border: 2px solid #fff;
+
         &::after {
             font-size: 22px;
         }
     }
 }
+
+//Form
+
+// Bozes scroll animations
