@@ -28,13 +28,21 @@
         height: 50px;
         border-radius: 50%;
         border: 2px solid #fff;
+        // transition: .5s all;
 
         &::after {
             font-size: 22px;
         }
+        // &:hover {
+        //     width: 55px;
+        //     height: 55px;
+        // }
     }
 }
 
 //Form
+.form-box {
+
+}
 
 // Bozes scroll animations

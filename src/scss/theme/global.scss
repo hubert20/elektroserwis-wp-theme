@@ -22,7 +22,7 @@
     }
 
     .top-header-menu {
-        border-bottom: 1px solid rgba(255,255,255,.1);
+        border-bottom: 1px solid rgba(255, 255, 255, .1);
     }
 
     &.sticky {
@@ -35,8 +35,8 @@
             .top-header-menu {
                 max-width: 100%;
                 transition: 0.3s ease-in-out;
-                background-color: #fff;
-                box-shadow: 0 0 16px rgba(50, 50, 50, 0.2);
+                // background-color: #fff;
+                // box-shadow: 0 0 16px rgba(50, 50, 50, 0.2);
                 position: relative;
             }
 
@@ -53,15 +53,15 @@
             >li {
                 >a {
                     @include media-breakpoint-up(xl) {
-                        color: #000;
-                        font-size: 1.2rem;
+                        // color: #000;
+                        font-size: 16px;
                         text-shadow: none;
-                        padding: 0.2rem 0.7rem;
-                        letter-spacing: 0.1em;
+                        // padding: 0.2rem 0.7rem;
+                        // letter-spacing: 0.1em;
 
-                        &:before {
-                            top: 45px;
-                        }
+                        // &:before {
+                        //     top: 45px;
+                        // }
                     }
                 }
             }
@@ -79,6 +79,7 @@
                 width: 165px;
             }
         }
+
         .slogan {
             letter-spacing: 2px;
             font-size: 18px;

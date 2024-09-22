@@ -13,6 +13,12 @@ get_header();
 <!-- Main about -->
 <?php get_template_part('template-parts/main-about'); ?>
 
+<!-- Main jobs -->
+<?php get_template_part('template-parts/main-jobs'); ?>
+
+<!-- Main Form -->
+<?php get_template_part('template-parts/main-form'); ?>
+
 <!-- Main realizations -->
 <?php get_template_part('template-parts/main-realizations'); ?>
 
