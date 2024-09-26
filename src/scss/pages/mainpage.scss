@@ -33,6 +33,7 @@
         &::after {
             font-size: 22px;
         }
+
         // &:hover {
         //     width: 55px;
         //     height: 55px;
@@ -42,7 +43,47 @@
 
 //Form
 .form-box {
-
+    background-image: url('http://localhost:81/wordpress/wp-content/uploads/2024/09/elektro-serwis-formularz-dark-min.jpg');
+    background-position: center;
+    position: relative;
+    z-index: 0;
+    &:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $orange;
+        opacity: .8;
+    }
 }
 
-// Bozes scroll animations
+// Boxes jobs scroll animations
+.counter-number {
+    -webkit-text-stroke-width: 2px;
+    text-stroke-color: #242424;
+    -webkit-text-stroke-color: $orange;
+    text-stroke-width: 2px;
+    color: transparent;
+
+    &--box {
+        position: relative;
+        z-index: 0;
+    }
+
+    &--plus {
+        &:after {
+            content: "+";
+            display: inline-block;
+        }
+    }
+
+    &--icon {
+        height: 85px;
+        position: absolute;
+        right: 50px;
+        z-index: -1;
+        opacity: .3;
+    }
+}

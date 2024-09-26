@@ -194,3 +194,13 @@ a:active {
 .icon-client_indiwidual:before {
   content: "\e902";
 }
+
+.title-stroke {
+  color: transparent;
+  &--dark {
+    text-stroke-color: #242424;
+    -webkit-text-stroke-color: #242424;
+    text-stroke-width: 2px;
+    -webkit-text-stroke-width: 2px;
+  }
+}
