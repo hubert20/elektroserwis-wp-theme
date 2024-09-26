@@ -204,3 +204,13 @@ a:active {
     -webkit-text-stroke-width: 2px;
   }
 }
+
+.title-stroke {
+  color: transparent;
+  &--white {
+    text-stroke-color: rgba(255,255,255, .1);
+    -webkit-text-stroke-color: rgba(255,255,255, .1);
+    text-stroke-width: 2px;
+    -webkit-text-stroke-width: 2px;
+  }
+}
