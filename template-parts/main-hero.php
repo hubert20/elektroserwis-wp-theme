@@ -1,6 +1,5 @@
 <?php
 $hero_background_desktop = get_field('hero_background_desktop');
-$hero_background_mobile = get_field('hero_background_mobile');
 ?>
 
 
@@ -25,7 +24,7 @@ $hero_background_mobile = get_field('hero_background_mobile');
                                     <div class="col-lg-6 mb-3 mb-lg-0">
                                         <?php echo $hero_cnt; ?>
                                     </div>
-                                    <div class="col-8 col-lg-4 text-center">
+                                    <div class="col-6 col-lg-4 text-center">
                                         <?php if ($hero_img) : ?>
                                             <img src="<?php echo $hero_img['url']; ?>" alt="<?php echo $hero_img['alt']; ?>" class="img-fluid mx-auto">
                                         <?php endif; ?>

@@ -1,8 +1,15 @@
 // Top Menu
 #top-header {
-    @include media-breakpoint-down(xl) {
-        box-shadow: 0 0 16px rgba(50, 50, 50, 0.2);
+
+    // @include media-breakpoint-down(xl) {
+    //     box-shadow: 0 0 16px rgba(50, 50, 50, 0.2);
+    // }
+    @include media-breakpoint-up(xl) {
+        background-color: rgba(0, 0, 0, .2);
     }
+
+    background-color: #000;
+
 }
 
 @include media-breakpoint-down(md) {
@@ -72,7 +79,7 @@
 .navbar-brand {
     &.top-logo {
         img {
-            width: 50px;
+            width: 120px;
             transition: 0.3s ease-in-out;
 
             @include media-breakpoint-up(xl) {
@@ -252,11 +259,11 @@
         padding: 0.6rem 1rem 0.7rem 1.5rem;
 
         @include media-breakpoint-up(xl) {
-            padding: 1rem 1rem 1rem 1.5rem;
+            padding: .5rem .5rem .5rem 1.5rem;
         }
 
         font-weight: 500;
-        font-size: 1.2rem;
+        font-size: 1rem;
         transition: 0.3s ease-in-out;
 
         @include media-breakpoint-up(xl) {
@@ -501,7 +508,8 @@
 
 //Top Toolbar
 .toolbar-area {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    // border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #000;
 }
 
 .contact-info {
@@ -511,8 +519,8 @@
 
     li {
         line-height: 35px;
-        border-right: 1px solid rgba(255, 255, 255, 0.3);
-        font-size: 17px;
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+        font-size: 14px;
         letter-spacing: .5px;
 
         &:last-child {
