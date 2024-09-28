@@ -240,3 +240,6 @@ function wp_elektroserwis_widgets_init()
 
 add_action('widgets_init', 'wp_elektroserwis_widgets_init');
 add_filter('widget_text', 'do_shortcode');
+
+// Remove <p> in block Contact form 7
+add_filter('wpcf7_autop_or_not', '__return_false');

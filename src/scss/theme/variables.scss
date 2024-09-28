@@ -102,3 +102,70 @@ $colors: (
         padding: 13px 30px 10px
     }
 }
+
+//Btn style 3
+.btn.btn--style-3 {
+    line-height: 1.1em;
+    background-color: $orange;
+    padding: 11px 20px 10.5px;
+    clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+    overflow: hidden;
+    line-height: 39px;
+}
+
+.btn.btn--style-3:before {
+    content: '';
+    position: absolute;
+    top: -110%;
+    left: -210%;
+    width: 400%;
+    height: 150%;
+    opacity: 0;
+    background: rgba(255, 255, 255, .25);
+    background: linear-gradient(to right, rgba(255, 255, 255, .25) 0%, rgba(255, 255, 255, .13) 77%, rgba(255, 255, 255, .5) 92%, #fff 100%);
+    -webkit-transform: rotate(30deg);
+    -khtml-transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    -o-transform: rotate(30deg);
+    transform: rotate(30deg)
+}
+
+.btn.btn--style-3:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: #161616;
+    clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+    z-index: -1;
+    -webkit-transition: .2s cubic-bezier(.24, .74, .58, 1);
+    -khtml-transition: .2s cubic-bezier(.24, .74, .58, 1);
+    -moz-transition: .2s cubic-bezier(.24, .74, .58, 1);
+    -ms-transition: .2s cubic-bezier(.24, .74, .58, 1);
+    -o-transition: .2s cubic-bezier(.24, .74, .58, 1);
+    transition: .2s cubic-bezier(.24, .74, .58, 1)
+}
+
+.btn.btn--style-3:hover {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), 100% 100%, 0 100%, 0 15px);
+    color: $orange;
+}
+
+.btn.btn--style-3:hover:before {
+    opacity: 1;
+    top: -30%;
+    left: 25%;
+    -webkit-transition: left 1.5s, top 1.5s, opacity .15s ease;
+    -khtml-transition: left 1.5s, top 1.5s, opacity .15s ease;
+    -moz-transition: left 1.5s, top 1.5s, opacity .15s ease;
+    -ms-transition: left 1.5s, top 1.5s, opacity .15s ease;
+    -o-transition: left 1.5s, top 1.5s, opacity .15s ease;
+    transition: left 1.5s, top 1.5s, opacity .15s ease
+}
+
+.btn.btn--style-3:hover:after{
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), 100% 100%, 0 100%, 0 15px)
+}

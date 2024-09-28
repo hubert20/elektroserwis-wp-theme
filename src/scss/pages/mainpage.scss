@@ -1,6 +1,8 @@
 // Main hero
 .top-hero {
-    min-height: 100vh;
+    @include media-breakpoint-up(lg) {
+        min-height: 100vh;
+    }
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -57,6 +59,7 @@
         left: 0;
         background-color: rgba(0, 0, 0, .7);
         opacity: .8;
+        z-index: -1;
     }
 
     .wpcf7-form-control.form-control {
@@ -73,9 +76,23 @@
     }
     .wpcf7-not-valid-tip {
         color: $orange;
-        font-size: 14px;
+        font-size: 13px;
         font-weight: normal;
         display: block;
+    }
+    .wpcf7-submit {
+        border: none;
+        background-color: $orange;
+        color: #fff !important;
+        padding: 0.475rem 0.75rem;
+        border-radius: 0;
+    }
+    .wpcf7 form.invalid .wpcf7-response-output, 
+    .wpcf7 form.sent .wpcf7-response-output, 
+    .wpcf7 form.unaccepted .wpcf7-response-output, 
+    .wpcf7 form.payment-required .wpcf7-response-output {
+        text-align: center;
+        color: #fff;
     }
 }
 

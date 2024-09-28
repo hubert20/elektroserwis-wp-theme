@@ -2,9 +2,8 @@
 $form_bg = get_field('form_bg');
 ?>
 
-
 <!-- Contact Form -->
-<section class="form-box py-4 py-lg-5" style="background-image: url('<?php echo $form_bg; ?>')">
+<section class="form-box py-4 py-lg-5" id="form-box" style="background-image: url('<?php echo $form_bg; ?>')">
     <div class="container my-lg-5">
         <div class="position-relative">
             <h2 class="title-stroke title-stroke--white fw-bold chakra-petch-font standard-title-3 text-uppercase text-center mb-0">Formularz kontaktowy</h2>

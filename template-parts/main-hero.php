@@ -7,7 +7,7 @@ $hero_background_desktop = get_field('hero_background_desktop');
     <!-- Hero Cnt -->
     <div class="container top-hero__cnt position-relative">
         <!-- Hero slider -->
-        <div class="top-hero__slider">
+        <div class="top-hero__slider py-5 py-lg-0">
             <!-- Slider main container -->
             <div class="swiper swiper-container main-swiper">
                 <!-- Additional required wrapper -->
