@@ -25,31 +25,9 @@
     <header id="top-header" class="fixed-lg-top" role="banner">
         <!-- Top Toolbar -->
         <div class="toolbar-area d-none d-lg-block px-xl-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-10">
-                        <ul class="contact-info d-flex flex-row chakra-petch-font fw-light">
-                            <li class="contact-info__email me-4 pe-4 text-white">
-                                <i class="fa fa-envelope me-2 text-orange"></i>
-                                <a href="mailto: serwis@elektro-serwis.eu" class="text-white">serwis@elektro-serwis.eu</a>
-                            </li>
-                            <li class="contact-info__phone me-4 pe-4 text-white">
-                                <i class="fa fa-phone me-2 text-orange"></i>
-                                <a href="tel:+48607140231" class="text-white">+48 735 300 794</a>
-                            </li>
-                            <li class="contact-info__email text-white">
-                                <i class="fa fa-map-marker me-2 text-orange"></i>
-                                Elektro-Serwis Gostynin ul. Płocka 7A
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-2 d-flex align-items-center justify-content-end">
-                        <a href="#" target="_blank" class="text-orange">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <?php if (is_active_sidebar('top-toolbar')) : ?>
+                <?php dynamic_sidebar('top-toolbar'); ?>
+            <?php endif; ?>
         </div>
         <!-- Top header -->
         <div class="top-header-menu">

@@ -11,6 +11,9 @@
  */
 ?>
 
+
+<?php get_template_part('template-parts/main-jobs'); ?>
+<?php get_template_part('template-parts/main-form'); ?>
 <footer class="site-footer" role="contentinfo">
     <?php get_template_part('footer-widget'); ?>
 </footer>

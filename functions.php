@@ -212,8 +212,8 @@ add_filter('show_admin_bar', '__return_false');
 function wp_elektroserwis_widgets_init()
 {
   register_sidebar(array(
-    'name' => esc_html__('static', 'elektroserwis-wp-theme'),
-    'id' => 'static',
+    'name' => esc_html__('Top toolbar', 'elektroserwis-wp-theme'),
+    'id' => 'top-toolbar',
     'description' => esc_html__('Add widgets here.', 'elektroserwis-wp-theme'),
     'before_widget' => '<div>',
     'after_widget' => '</div>',
@@ -232,6 +232,15 @@ function wp_elektroserwis_widgets_init()
     'id'            => 'menu-about',
     'description'   => esc_html__('Add widgets here.', 'elektroserwis-wp-theme'),
     'before_widget' => '<div id="%1$s" class="bottom-nav-menu widget %2$s">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h5 class="bottom-nav-menu__title mb-2 mb-lg-3 font-weight-bold">',
+    'after_title'   => '</h5>',
+  ));
+  register_sidebar(array(
+    'name'          => esc_html__('Footer start', 'elektroserwis-wp-theme'),
+    'id'            => 'footer-start',
+    'description'   => esc_html__('Add widgets here.', 'elektroserwis-wp-theme'),
+    'before_widget' => '<div id="%1$s" class=" widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h5 class="bottom-nav-menu__title mb-2 mb-lg-3 font-weight-bold">',
     'after_title'   => '</h5>',

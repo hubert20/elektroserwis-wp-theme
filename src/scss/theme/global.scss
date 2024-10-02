@@ -1,16 +1,18 @@
 // Top Menu
-#top-header {
-
-    // @include media-breakpoint-down(xl) {
-    //     box-shadow: 0 0 16px rgba(50, 50, 50, 0.2);
-    // }
+.home #top-header {
     @include media-breakpoint-up(xl) {
         background-color: rgba(0, 0, 0, .2);
+
+        .top-header-menu {
+            border-bottom: 1px solid rgba(255, 255, 255, .1);
+        }
     }
-
-    background-color: #000;
-
 }
+
+#top-header {
+    background-color: #232323;
+}
+
 
 @include media-breakpoint-down(md) {
     .navbar-collapse {
@@ -21,6 +23,16 @@
 }
 
 // Tom menu with sticky
+
+.home #top-header {
+    &.sticky {
+        @include media-breakpoint-up(xl) {
+            background-color: rgba(0, 0, 0, .6);
+        }
+    }
+}
+
+
 #top-header {
     .navbar-address {
         @media screen and (min-width: 1700px) {
@@ -28,15 +40,7 @@
         }
     }
 
-    .top-header-menu {
-        border-bottom: 1px solid rgba(255, 255, 255, .1);
-    }
-
     &.sticky {
-
-        @include media-breakpoint-up(xl) {
-            background-color: rgba(0, 0, 0, .6);
-        }
 
         transition: 0.3s ease-in-out;
 
@@ -113,6 +117,7 @@
             >a {
                 color: #fff;
                 text-transform: uppercase;
+                z-index: 0;
 
                 @include media-breakpoint-up(xl) {
                     font-size: 16px;
@@ -138,7 +143,7 @@
                 padding: 0.5rem 0.7rem;
                 margin: 0 10px;
                 font-size: 1.2rem;
-                font-weight: 600;
+                // font-weight: 600;
                 text-align: center;
 
                 &:hover {
@@ -158,7 +163,7 @@
                 }
 
                 @include media-breakpoint-down(xl) {
-                    border-bottom: 1px solid #d8d8d8;
+                    border-bottom: 1px solid #444;
                     padding: 0.6rem 0.7rem;
                 }
             }
@@ -236,11 +241,10 @@
 .dropdown-menu {
     border-radius: 0;
     padding: 0;
-    background: #ddd;
+    background: #232323;
 
     @include media-breakpoint-up(xl) {
         box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
-        background: #fff;
     }
 
     &.depth_1 {
@@ -251,7 +255,7 @@
     border: none;
 
     .menu-item {
-        border-bottom: 1px solid #f1f1f1;
+        border-bottom: 1px solid #444;
         background-color: transparent;
 
         &:last-child {
@@ -266,9 +270,9 @@
             padding: .5rem .5rem .5rem 1.5rem;
         }
 
-        font-weight: 500;
         font-size: 1rem;
         transition: 0.3s ease-in-out;
+        color: #fff;
 
         @include media-breakpoint-up(xl) {
             &:hover {
@@ -283,12 +287,16 @@
             font-weight: normal;
             position: absolute;
             left: 12px;
-            color: #c5c5c5;
+            color: $orange;
         }
 
         &:hover {
             background-color: $orange;
             color: #fff;
+
+            &:before {
+                color: #fff;
+            }
         }
 
         &.active {
@@ -617,12 +625,51 @@
     }
 }
 
-.fixed-lg-top {
+.home .fixed-lg-top {
     @include media-breakpoint-up(xl) {
         position: fixed;
         top: 0;
         right: 0;
         left: 0;
         z-index: 1030;
+    }
+}
+
+// Header defeault
+.header-image-defeault {
+    position: relative;
+    z-index: 0;
+
+    @include media-breakpoint-up(xl) {
+        min-height: 350px;
+    }
+
+    min-height: 250px;
+    background-image: url('/wp-content/uploads/2024/10/top-header-img-bg-min.jpg');
+    background-size: cover;
+    background-position: center;
+
+    &:before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #121212;
+        opacity: .86;
+        mix-blend-mode: darken;
+        transition: background .3s, border-radius .3s, opacity .3s;
+        content: "";
+        z-index: -1;
+    }
+}
+
+//breadcrumbs
+.breadcrumbs {
+    color: $orange;
+    a {
+        color: #fff;
+    }
+
+    .breadcrumb_last {
+        color: $orange;
     }
 }
