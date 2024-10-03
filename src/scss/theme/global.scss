@@ -665,6 +665,7 @@
 //breadcrumbs
 .breadcrumbs {
     color: $orange;
+
     a {
         color: #fff;
     }
@@ -672,4 +673,9 @@
     .breadcrumb_last {
         color: $orange;
     }
+}
+
+//Pages default
+.page-template-template-defeault {
+    background-color: #232323;
 }

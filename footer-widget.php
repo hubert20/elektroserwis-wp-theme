@@ -33,7 +33,7 @@
                 <?php endif; ?>
             </div>
             <div class="col-lg-4">
-                <h5 class="text-orange standard-title-7 chakra-petch-font mb-2 mb-lg-4 fw-bold">Oferta</h5>
+                <h5 class="text-orange standard-title-7 chakra-petch-font mb-2 mb-lg-4 fw-bold text-uppercase">Oferta</h5>
                 <?php if (is_active_sidebar('menu-services')) : ?>
                     <?php dynamic_sidebar('menu-services'); ?>
                 <?php endif; ?>

@@ -1,6 +1,7 @@
 <!-- Jobs counter section -->
-<section class="counter-main-box py-4 py-lg-5 my-lg-5" id="counter">
+<section class="counter-main-box py-4 py-lg-5 bg-white" id="counter">
     <div class="container">
+    <h2 class="subtitle chakra-petch-font text-center standard-title-4 fw-bolder mb-3 mb-lg-5">Nasza praca</h2>
         <div class="row justify-content-center">
             <div class="col-lg-3">
                 <div class="position-relative counter-number--box">
