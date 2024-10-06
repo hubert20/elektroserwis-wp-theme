@@ -676,6 +676,200 @@
 }
 
 //Pages default
-.page-template-template-defeault {
+.page-template-template-defeault,
+.page-template-template-defeault-product {
     background-color: #232323;
+}
+
+//Page alternatory
+.failure-alternator {
+    background: #efefef;
+
+    &__item {
+        background-color: rgba(0, 0, 0, .1);
+        clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+        overflow: hidden;
+        position: relative;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+            background: #efefef;
+            clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+            z-index: -1;
+            transition: .2s cubic-bezier(0.24, 0.74, 0.58, 1);
+        }
+    }
+
+    &__item-title {
+        font-size: 22px;
+    }
+
+    &__point {
+        background-color: #f47729;
+        clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+            background: $orange;
+            clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+            z-index: -1;
+            transition: .2s cubic-bezier(0.24, 0.74, 0.58, 1);
+        }
+    }
+}
+
+// Box style orange 
+.box-style-orange {
+    background-color: #f47729;
+    clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+    overflow: hidden;
+    position: relative;
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        background: #232323;
+        clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+        z-index: -1;
+        transition: .2s cubic-bezier(0.24, 0.74, 0.58, 1);
+    }
+}
+
+.box-style-dark {
+    background-color: #121212;
+    clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+    overflow: hidden;
+    position: relative;
+}
+
+//Icon logo lightning
+.subtitle-counter-icon {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    z-index: -1;
+}
+
+// Pulse animation
+.pulse-animation {
+    .video-btn {
+        position: absolute;
+        text-align: center;
+        box-shadow: 0 12px 24px 0 rgba(228, 6, 19, .5);
+        border-radius: 50%;
+        background: #f47729;
+        color: #fff;
+        z-index: 1;
+
+        &:before {
+            content: '';
+            height: 150%;
+            width: 150%;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid #fff;
+            z-index: -1;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 110%;
+            width: 110%;
+            line-height: 110px;
+            background: #f47729;
+            border-radius: 50%;
+            z-index: -1;
+            animation: pulse-border 1500ms ease-out infinite;
+        }
+    }
+
+    &--sm {
+        .video-btn {
+            height: 35px;
+            width: 35px;
+            line-height: 35px;
+            font-size: 15px;
+        }
+    }
+
+    &--lg {
+        .video-btn {
+            height: 65px;
+            width: 65px;
+            line-height: 65px;
+            font-size: 20px;
+        }
+    }
+
+    &--center {
+        .video-btn {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &--top-left {
+        .video-btn {
+            left: 10%;
+            top: 10%;
+        }
+    }
+}
+
+.fa-play {
+    &:before {
+        content: "\f04b";
+    }
+}
+
+@keyframes pulse-border {
+    0% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+        opacity: 1
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.3);
+        opacity: 0
+    }
+}
+
+.lighten {
+    animation: lighten 2s linear infinite;
+}
+
+@keyframes lighten {
+    0% {
+        border-color: transparent;
+    }
+
+    100% {
+        border-color: #fff;
+    }
 }

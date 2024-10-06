@@ -1,7 +1,10 @@
 <!-- Jobs counter section -->
 <section class="counter-main-box py-4 py-lg-5 bg-white" id="counter">
     <div class="container">
-    <h2 class="subtitle chakra-petch-font text-center standard-title-4 fw-bolder mb-3 mb-lg-5">Nasza praca</h2>
+    <h2 class="subtitle chakra-petch-font text-center standard-title-4 fw-bolder mb-3 mb-lg-5 position-relative" style="z-index: 0;">
+    <img src="/wp-content/uploads/2024/10/bolt-1.gif" class="subtitle-counter-icon">
+    Czemu zaufać właśnie nam?
+    </h2>
         <div class="row justify-content-center">
             <div class="col-lg-3">
                 <div class="position-relative counter-number--box">

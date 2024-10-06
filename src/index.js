@@ -25,6 +25,28 @@ import { Navigation } from 'swiper/modules'
     }
   });
 
+// Open film in modal
+// Open YouTube testimonials in modal
+let videoSrc;
+
+// Zbierz wszystkie przyciski wideo i dodaj nasłuchiwanie kliknięć
+document.querySelectorAll('.video-btn').forEach(button => {
+    button.addEventListener('click', function () {
+        videoSrc = this.getAttribute('data-src');
+    });
+});
+
+// Kiedy modal się otwiera
+document.getElementById('ModalVideo').addEventListener('shown.bs.modal', function () {
+    document.getElementById('video').setAttribute('src', `${videoSrc}?modestbranding=1&rel=0&controls=1&showinfo=0&html5=1&autoplay=1`);
+});
+
+// Kiedy modal się zamyka
+document.getElementById('ModalVideo').addEventListener('hide.bs.modal', function () {
+    document.getElementById('video').setAttribute('src', videoSrc);
+});
+
+
 // Scroll Counter number
   var counted = 0;
   window.addEventListener('scroll', function () {
