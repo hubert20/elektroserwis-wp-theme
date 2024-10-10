@@ -11,9 +11,10 @@
  */
 ?>
 
-
-<?php get_template_part('template-parts/main-jobs'); ?>
-<?php get_template_part('template-parts/main-form'); ?>
+<?php if (!is_page('sklep')) : ?>
+    <?php get_template_part('template-parts/main-jobs'); ?>
+    <?php get_template_part('template-parts/main-form'); ?>
+<?php endif; ?>
 <footer class="site-footer" role="contentinfo">
     <?php get_template_part('footer-widget'); ?>
 </footer>
