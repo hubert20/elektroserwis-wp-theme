@@ -1,0 +1,37 @@
+// All styles for shop
+.woocommerce-shop {
+    background-color: #f8f8f8;
+}
+
+.woocommerce ul.products li.product a img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+    padding: 15px;
+    background: #fff;
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+    color: $orange;
+    font-family: $Chakra-Petch-family;
+    font-weight: bold;
+}
+
+.woocommerce:where(body:not(.woocommerce-uses-block-theme)) ul.products li.product .price {
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.woocommerce ul.products li.product .button {
+    background: #f47729;
+    color: #fff;
+    display: block;
+    text-align: center;
+}

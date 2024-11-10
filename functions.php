@@ -252,3 +252,35 @@ add_filter('widget_text', 'do_shortcode');
 
 // Remove <p> in block Contact form 7
 add_filter('wpcf7_autop_or_not', '__return_false');
+
+
+function mytheme_add_woocommerce_support() {
+	add_theme_support( 'woocommerce' );
+
+	// Opcjonalne dodatkowe wsparcie, np. dla miniatur produktów, galerii itp.
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
+}
+
+add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
+
+
+
+// Ustaw maksymalną liczbę produktów na stronę w sklepie WooCommerce
+add_filter( 'loop_shop_per_page', 'custom_woocommerce_products_per_page', 20 );
+
+function custom_woocommerce_products_per_page( $products ) {
+    // Ustaw wartość na liczbę produktów, którą chcesz wyświetlić
+    $products = 12;
+    return $products;
+}
+
+function custom_woocommerce_image_dimensions() {
+  // Miniaturki listy produktów
+  add_image_size( 'woocommerce_thumbnail', 150, 150, true ); // Wymiary: 150x150, crop (przycięcie)
+  add_image_size( 'shop_catalog', 150, 150, true ); // Wymiary: 150x150 dla katalogu
+  add_image_size( 'shop_single', 300, 300, true ); // Wymiary: 300x300 dla strony pojedynczego produktu
+}
+
+add_action( 'after_setup_theme', 'custom_woocommerce_image_dimensions', 1 );
