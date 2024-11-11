@@ -5,7 +5,7 @@
             <div class="col-lg-3">
                 <div class="row justify-content-center justify-content-lg-start">
                     <div class="col-8 col-lg-10">
-                        <img src="/wp-content/uploads/2024/09/Logo-Gotowe-male-white.png" class="img-fluid mb-3 mb-lg-0 mx-auto">
+                        <img src="https://www.elektro-serwis.eu/wp-content/uploads/2024/09/Logo-Gotowe-male-white.png" class="img-fluid mb-3 mb-lg-0 mx-auto">
                     </div>
                 </div>
             </div>

@@ -14,8 +14,9 @@ function wp_elektroserwis_scripts()
   wp_enqueue_style('wp-elektroserwis-css', get_template_directory_uri() . '/dist/style.css', array(), $ver_num, 'all');
   wp_enqueue_style('font-awesome-4', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', array(), null);
   wp_enqueue_script('jquery');
-  if (!is_admin()) wp_deregister_script('jquery');
-  wp_enqueue_script('my_javascript_file', get_template_directory_uri() . '/dist/main.bundle.js', array(), $ver_num, true);
+  wp_enqueue_script('my_javascript_file', get_template_directory_uri() . '/dist/main.bundle.js', array('jquery'), $ver_num, true);
+  // if (!is_admin()) wp_deregister_script('jquery');
+  // wp_enqueue_script('my_javascript_file', get_template_directory_uri() . '/dist/main.bundle.js', array(), $ver_num, true);
 }
 add_action('wp_enqueue_scripts', 'wp_elektroserwis_scripts');
 
@@ -258,9 +259,9 @@ function mytheme_add_woocommerce_support() {
 	add_theme_support( 'woocommerce' );
 
 	// Opcjonalne dodatkowe wsparcie, np. dla miniatur produktów, galerii itp.
-	add_theme_support( 'wc-product-gallery-zoom' );
-	add_theme_support( 'wc-product-gallery-lightbox' );
-	add_theme_support( 'wc-product-gallery-slider' );
+  add_theme_support( 'wc-product-gallery-zoom' );
+  add_theme_support( 'wc-product-gallery-lightbox' );
+  add_theme_support( 'wc-product-gallery-slider' );
 }
 
 add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );

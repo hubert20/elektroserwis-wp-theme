@@ -45,7 +45,7 @@
 
 //Form
 .form-box {
-    background-image: url('http://www.elektro-serwis.eu/wp-content/uploads/2024/09/car-mechanic-work-small.jpg');
+    background-image: url('https://www.elektro-serwis.eu/wp-content/uploads/2024/09/car-mechanic-work-small.jpg');
     background-position: center;
     position: relative;
     z-index: 0;
@@ -117,7 +117,7 @@
     }
 
     &--icon {
-        height: 85px;
+        height: 85px!important;
         position: absolute;
         right: 50px;
         z-index: -1;

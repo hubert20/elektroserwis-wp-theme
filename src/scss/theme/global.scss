@@ -125,18 +125,20 @@
                     position: relative;
                     padding: 1.6rem 0.7rem 1.2rem 0.7rem;
 
-                    &::before {
-                        display: inline-block;
-                        content: '';
-                        height: 45%;
-                        width: 0;
-                        position: absolute;
-                        left: 0;
-                        top: 50%;
-                        background-color: $orange;
-                        transition: 0.3s ease-in-out;
-                        z-index: -1;
-                        transform: translateY(-45%) skew(-23deg, 0deg);
+                    &:not(.wpmenucart-contents) {
+                        &::before {
+                            display: inline-block;
+                            content: '';
+                            height: 45%;
+                            width: 0;
+                            position: absolute;
+                            left: 0;
+                            top: 50%;
+                            background-color: $orange;
+                            transition: 0.3s ease-in-out;
+                            z-index: -1;
+                            transform: translateY(-45%) skew(-23deg, 0deg);
+                        }
                     }
                 }
 
@@ -462,7 +464,7 @@
     width: 100%;
     height: 100%;
     content: '';
-    background-image: url(/wp-content/uploads/2023/05/alumi-oferta-paralax-2-min.jpg);
+    background-image: url('/wp-content/uploads/2023/05/alumi-oferta-paralax-2-min.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -667,6 +669,7 @@
         background-image: url('/wp-content/uploads/2024/10/klimatyzacja-top-bg-min.jpg');
     }
 }
+
 .page-id-66 {
     .header-image-defeault {
         background-image: url('/wp-content/uploads/2024/10/alternator-top-bg-min.jpg');
