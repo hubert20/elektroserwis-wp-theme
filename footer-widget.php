@@ -23,7 +23,7 @@
                 <?php if (is_active_sidebar('menu-about')) : ?>
                     <?php dynamic_sidebar('menu-about'); ?>
                 <?php endif; ?>
-                <a href="#" target="_blank" rel="nofollow noopener noreferrer" class="text-center d-inline-block text-orange bottom-fb-link">
+                <a href="https://www.facebook.com/elektroserwis.piotrlewandowski" target="_blank" rel="nofollow noopener noreferrer" class="text-center d-inline-block text-orange bottom-fb-link">
                     <i class="fa fa-facebook text-orange"></i>
                 </a>
             </div>
