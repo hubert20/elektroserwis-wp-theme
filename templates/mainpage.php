@@ -10,8 +10,8 @@ get_header();
 <!-- Main hero -->
 <?php get_template_part('template-parts/main-hero'); ?>
 
-<!-- Main about -->
-<?php get_template_part('template-parts/main-about'); ?>
+<!-- Main banner shop -->
+<?php get_template_part('template-parts/main-banner-shop'); ?>
 
 <!-- Main realizations -->
 <?php get_template_part('template-parts/main-realizations'); ?>

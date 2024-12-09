@@ -88,17 +88,17 @@ import { Navigation } from 'swiper/modules'
   }
   //Cart
   // Sprawdzenie, czy element z klasą .cartcontents istnieje
-  const cartContents = document.querySelector(".cartcontents");
-  if (cartContents) {
-    cartContents.textContent = cartContents.textContent.replace("produktów", "").trim();
-    cartContents.textContent = cartContents.textContent.replace("produkty", "").trim();
-    cartContents.textContent = cartContents.textContent.replace("produkt", "").trim();
-  }
+  // const cartContents = document.querySelector(".cartcontents");
+  // if (cartContents) {
+  //   cartContents.textContent = cartContents.textContent.replace("produktów", "").trim();
+  //   cartContents.textContent = cartContents.textContent.replace("produkty", "").trim();
+  //   cartContents.textContent = cartContents.textContent.replace("produkt", "").trim();
+  // }
 
-  // Sprawdzenie, czy element z klasą .wpmenucart-contents istnieje
-  const wpMenuCartContents = document.querySelector("#wpmenucartli .wpmenucart-contents");
-  if (wpMenuCartContents) {
-    wpMenuCartContents.classList.add("nav-link");
-  }
+  // // Sprawdzenie, czy element z klasą .wpmenucart-contents istnieje
+  // const wpMenuCartContents = document.querySelector("#wpmenucartli .wpmenucart-contents");
+  // if (wpMenuCartContents) {
+  //   wpMenuCartContents.classList.add("nav-link");
+  // }
 
 })();

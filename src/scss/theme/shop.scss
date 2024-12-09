@@ -1,5 +1,6 @@
 // All styles for shop
-.woocommerce-shop {
+.woocommerce-shop,
+.woocommerce-page {
     background-color: #f8f8f8;
 }
 
@@ -135,4 +136,207 @@
 .woocommerce-products-header__title {
     font-family: $Chakra-Petch-family;
     font-weight: bold;
+}
+
+// Cart in menu link
+#top-header {
+    .navbar-nav {
+        >li {
+            >a {
+                &.wpmenucart-contents {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+//Breadcrums
+.woocommerce:where(body:not(.woocommerce-uses-block-theme)) .woocommerce-breadcrumb {
+    font-size: .80em;
+}
+
+.woocommerce .woocommerce-breadcrumb {
+    margin: 0 0 2em;
+}
+
+//Product Details
+.woocommerce div.product .product_title {
+    font-family: $Chakra-Petch-family;
+    font-weight: 600;
+}
+
+//h6 30px - 22px
+@media (min-width: 360px) {
+    .woocommerce div.product .product_title {
+        font-size: calc(1.4375rem + ((1vw - 3.6px) * 0.4487));
+        min-height: 0vw;
+    }
+}
+
+@media (min-width: 1920px) {
+    .woocommerce div.product .product_title {
+        font-size: 30px;
+    }
+}
+
+.woocommerce div.product div.summary {
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    padding: 15px;
+}
+
+.woocommerce div.product div.images.woocommerce-product-gallery {
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    padding: 15px;
+}
+
+.woocommerce:where(body:not(.woocommerce-uses-block-theme)) div.product p.price,
+.woocommerce:where(body:not(.woocommerce-uses-block-theme)) div.product span.price {
+    color: #727272;
+    font-size: 1.55em;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 600;
+}
+
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button.alt {
+    background-color: $orange;
+}
+
+// Left sidebar
+div#block-14 {
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    margin-bottom: 10px;
+}
+
+.widget_search {
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    margin-bottom: 20px;
+}
+
+.left-sidebar-shop-list {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 6px;
+    padding: 12px;
+}
+
+// Search button
+.wp-block-search {
+    &__button {
+        border-radius: 6px;
+        background: #f47729;
+        color: #f47729;
+        position: relative;
+        border: 1px solid;
+        position: relative;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 40px;
+        height: 40px;
+        border: none;
+        cursor: pointer;
+
+        &::before {
+            color: #FFF;
+            content: "\f002";
+            font-family: "FontAwesome";
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: inherit;
+            font-size: 18px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__label {
+        font-family: $Chakra-Petch-family;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    &__input {
+        border-radius: 6px;
+        font-size: 15px;
+    }
+}
+
+// left sidebar categories list
+.wp-block-woocommerce-product-categories {
+    >ul {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 0;
+        text-transform: uppercase;
+
+        >li>a {
+            color: #000;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            font-family: $Chakra-Petch-family;
+
+            &:hover {
+                color: #555;
+            }
+        }
+
+        ul {
+            li {
+                >a {
+                    color: $orange;
+                    font-size: 15px;
+                    font-weight: bold;
+
+                    &:hover {
+                        color: darken($orange, 10%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.woocommerce a.added_to_cart {
+    display: block;
+    text-align: center;
+    color: #000;
+    position: relative;
+    font-weight: bold;
+
+    &::after {
+        content: "\f07a";
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        color: #000;
+        padding-left: .2em;
+        position: absolute;
+        top: 6px;
+    }
+}
+
+//Cart
+.wc-block-components-product-name {
+    color: $orange;
+    font-weight: 600;
+    font-family: $Chakra-Petch-family;
+}
+
+// Btns
+.wc-block-cart__submit-button {
+    @extend .btn;
+    @extend .btn-orange;
+}
+
+//Inputs
+.input-text  {
+    @extend .form-control;
 }

@@ -4,36 +4,38 @@
 
 $orange: #f47729;
 
+// Definiowanie nazw jako stringów
 $names: (
-    orange
+    "orange"
 );
+
+// Mapowanie nazw na kolory
 $colors: (
-    $orange
+    "orange": $orange
 );
 
 @each $name in $names {
-    $i: index($names, $name);
-
     .bg-#{$name} {
-        background-color: nth($colors, $i);
+        background-color: map-get($colors, $name);
     }
 
     .text-#{$name} {
-        color: nth($colors, $i);
+        color: map-get($colors, $name);
     }
 
     .btn-#{$name} {
         @extend .btn;
-        background: nth($colors, $i);
+        background: map-get($colors, $name);
         color: #fff !important;
 
         &:hover,
         &:focus {
-            color: nth($colors, $i) !important;
+            color: map-get($colors, $name) !important;
             background: #fff;
         }
     }
 }
+
 
 //Custom Btn
 .btn {
@@ -169,3 +171,9 @@ $colors: (
 .btn.btn--style-3:hover:after{
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), 100% 100%, 0 100%, 0 15px)
 }
+
+.btn-orange {
+    background-color: $orange;
+    color: #fff;
+}
+

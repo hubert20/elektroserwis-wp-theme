@@ -246,6 +246,13 @@ function wp_elektroserwis_widgets_init()
     'before_title'  => '<h5 class="bottom-nav-menu__title mb-2 mb-lg-3 font-weight-bold">',
     'after_title'   => '</h5>',
   ));
+  register_sidebar(array(
+    'name'          => esc_html__('Left sidebar', 'elektroserwis-wp-theme'),
+    'id'            => 'left-sidebar',
+    'description'   => esc_html__('Add widgets here.', 'elektroserwis-wp-theme'),
+    'before_widget' => '<div id="%1$s" class=" widget %2$s">',
+    'after_widget'  => '</div>',
+  ));
 }
 
 add_action('widgets_init', 'wp_elektroserwis_widgets_init');
@@ -255,33 +262,98 @@ add_filter('widget_text', 'do_shortcode');
 add_filter('wpcf7_autop_or_not', '__return_false');
 
 
-function mytheme_add_woocommerce_support() {
-	add_theme_support( 'woocommerce' );
+function mytheme_add_woocommerce_support()
+{
+  add_theme_support('woocommerce');
 
-	// Opcjonalne dodatkowe wsparcie, np. dla miniatur produktów, galerii itp.
-  add_theme_support( 'wc-product-gallery-zoom' );
-  add_theme_support( 'wc-product-gallery-lightbox' );
-  add_theme_support( 'wc-product-gallery-slider' );
+  // Opcjonalne dodatkowe wsparcie, np. dla miniatur produktów, galerii itp.
+  add_theme_support('wc-product-gallery-zoom');
+  add_theme_support('wc-product-gallery-lightbox');
+  add_theme_support('wc-product-gallery-slider');
 }
 
-add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
+add_action('after_setup_theme', 'mytheme_add_woocommerce_support');
 
 
 
 // Ustaw maksymalną liczbę produktów na stronę w sklepie WooCommerce
-add_filter( 'loop_shop_per_page', 'custom_woocommerce_products_per_page', 20 );
+add_filter('loop_shop_per_page', 'custom_woocommerce_products_per_page', 20);
 
-function custom_woocommerce_products_per_page( $products ) {
-    // Ustaw wartość na liczbę produktów, którą chcesz wyświetlić
-    $products = 12;
-    return $products;
+function custom_woocommerce_products_per_page($products)
+{
+  // Ustaw wartość na liczbę produktów, którą chcesz wyświetlić
+  $products = 12;
+  return $products;
 }
 
-function custom_woocommerce_image_dimensions() {
+function custom_woocommerce_image_dimensions()
+{
   // Miniaturki listy produktów
-  add_image_size( 'woocommerce_thumbnail', 150, 150, true ); // Wymiary: 150x150, crop (przycięcie)
-  add_image_size( 'shop_catalog', 150, 150, true ); // Wymiary: 150x150 dla katalogu
-  add_image_size( 'shop_single', 300, 300, true ); // Wymiary: 300x300 dla strony pojedynczego produktu
+  add_image_size('woocommerce_thumbnail', 150, 150, true); // Wymiary: 150x150, crop (przycięcie)
+  add_image_size('shop_catalog', 150, 150, true); // Wymiary: 150x150 dla katalogu
+  add_image_size('shop_single', 300, 300, true); // Wymiary: 300x300 dla strony pojedynczego produktu
 }
 
-add_action( 'after_setup_theme', 'custom_woocommerce_image_dimensions', 1 );
+add_action('after_setup_theme', 'custom_woocommerce_image_dimensions', 1);
+
+// Show only 3 products in row on list
+add_filter('loop_shop_columns', 'custom_loop_columns', 999);
+function custom_loop_columns($columns)
+{
+  return 3; // Ustaw 3 produkty w rzędzie
+}
+
+//order
+add_action('woocommerce_cart_calculate_fees', 'add_cod_shipping_fee', 10, 1);
+
+function add_cod_shipping_fee($cart)
+{
+  if (is_admin() || !is_checkout()) {
+    return;
+  }
+
+  // Pobierz wybraną metodę płatności
+  $chosen_payment_method = WC()->session->get('chosen_payment_method');
+  // Pobierz wybraną metodę wysyłki
+  $chosen_shipping_methods = WC()->session->get('chosen_shipping_methods');
+  $chosen_shipping_method = isset($chosen_shipping_methods[0]) ? $chosen_shipping_methods[0] : '';
+
+  // Określ dodatkowe koszty dla każdej metody wysyłki
+  $additional_fee = 0;
+  if ($chosen_payment_method === 'cod') {
+    if ($chosen_shipping_method === 'flat_rate:3') { // InPost
+      $additional_fee = 3.11;
+    } elseif ($chosen_shipping_method === 'flat_rate:4') { // UPS
+      $additional_fee = 6.13;
+    } elseif ($chosen_shipping_method === 'flat_rate:5') { // GLS
+      $additional_fee = 4.09;
+    } elseif ($chosen_shipping_method === 'flat_rate:6') { // DHL
+      $additional_fee = 3.43;
+    } elseif ($chosen_shipping_method === 'flat_rate:8') { // DPD
+      $additional_fee = 3.72;
+    }
+    // Dodaj dodatkowy koszt
+    if ($additional_fee > 0) {
+      $cart->add_fee(__('Dodatkowy koszt za pobraniem', 'your-text-domain'), $additional_fee);
+    }
+  }
+}
+
+add_action('wp_footer', 'refresh_cart_on_payment_change');
+
+function refresh_cart_on_payment_change()
+{
+  if (is_checkout()) {
+?>
+    <script type="text/javascript">
+      jQuery(function($) {
+        // Nasłuchuj zmian metody płatności
+        $('form.woocommerce-checkout').on('change', 'input[name="payment_method"]', function() {
+          // Wymuś odświeżenie koszyka
+          $(document.body).trigger('update_checkout');
+        });
+      });
+    </script>
+<?php
+  }
+}
